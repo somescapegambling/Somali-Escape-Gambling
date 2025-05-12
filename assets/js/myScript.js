@@ -152,7 +152,7 @@ function rollBtn() {
             diceNum = 1;
         }
     }
-    var diceSrc = 'assets/img/d-' + diceNum + '.png';
+    var diceSrc = '../assets/img/d-' + diceNum + '.png';
     document.getElementById('dice').src = diceSrc;
     if (uniqueDice == 0) {
         var qwert = canNotMove();

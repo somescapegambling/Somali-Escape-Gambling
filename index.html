@@ -22,7 +22,7 @@
 							<img class="w-100" src="assets/img/main.png">
 					    </div>
 					</div>
-                            <form action="game.html" method="post" name="playerSet" class="ps">
+                            <form method="GET" action="game/game.html" onsubmit="return handleFormSubmit(event)" name="playerSet" class="ps">
                             	<div class="m-box">
                             		<div class="row mrl-7">
 	                            		<div class="col sty-box">
@@ -110,5 +110,23 @@
 								<div>By Khushi Sharma</div>
 					    	</div>
 					    </div>
+
+<script>
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(event.target);
+    
+    // Store all form fields in localStorage
+    for (let [key, value] of formData.entries()) {
+        localStorage.setItem(key, value);
+    }
+    
+    // Redirect to game.html
+    window.location.href = 'game/game.html';
+    return false;
+}
+</script>
 	</body>
 </html>
